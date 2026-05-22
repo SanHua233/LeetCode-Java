@@ -1,7 +1,5 @@
 package com.array1.A1Q3;
 
-import java.util.Arrays;
-
 public class Solution {
     public int findMaxConsecutiveOnes(int[] nums) {
         int res = 0;
