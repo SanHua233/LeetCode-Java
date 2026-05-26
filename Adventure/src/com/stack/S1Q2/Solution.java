@@ -6,18 +6,17 @@ public class Solution {
     public int evalRPN(String[] tokens) {
         // 解法思路：数字进栈，符号则从数字栈中取两个进行运算，然后结果入栈
         Stack<Integer> numStack = new Stack<>();    // 数字栈
-        int num1, num2, res;
-        int n = tokens.length;
-        for (int i = 0; i < n; i++) {
+        int num1, num2;
+        for (String token : tokens) {
             // 数字进栈
-            if (isNum(tokens[i])){
-                numStack.add(Integer.parseInt(tokens[i]));
+            if (isNum(token)) {
+                numStack.add(Integer.parseInt(token));
             }
             // 符号出栈
-            else{
+            else {
                 num2 = numStack.pop();
                 num1 = numStack.pop();
-                numStack.add(cala(num1, num2, tokens[i]));
+                numStack.add(cala(num1, num2, token));
             }
         }
         return numStack.pop();
