@@ -6,7 +6,7 @@ public class Solution {
         int[] landEndTime = new int[landStartTime.length];
         int[] waterEndTime = new int[waterStartTime.length];
         // 计算最早完成时间
-        int waterLess = 9999, landLess = 9999;
+        int waterLess = Integer.MAX_VALUE, landLess = Integer.MAX_VALUE;
         for (int i = 0; i < landStartTime.length; i++) {
             landEndTime[i] = landStartTime[i] + landDuration[i];
             if (landEndTime[i] < landLess){
@@ -19,7 +19,7 @@ public class Solution {
                 waterLess = waterEndTime[i];
             }
         }
-        int wl = 9999,lw = 9999;
+        int wl = Integer.MAX_VALUE,lw = Integer.MAX_VALUE;
         // 先水
         for (int i = 0; i < landStartTime.length; i++) {
             if (landStartTime[i] <= waterLess){
